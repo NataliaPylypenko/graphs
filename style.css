@@ -80,17 +80,16 @@ p {
     font-size: 16px;
     line-height: 1.5;
 }
-
 .topnav {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 32px;
 }
+
 @media (max-width: 991px){
     h1 {
         font-size: 28px;
-        margin-bottom: 8px;
     }
     h2 {
         font-size: 18px;
@@ -98,13 +97,11 @@ p {
     p {
         font-size: 14px;
     }
-
     .topnav {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     .title__items {
         margin-bottom: 20px;
     }
@@ -120,7 +117,6 @@ p {
     background-color: var(--white);
     border-radius: 72px;
 }
-
 .tab__item {
     display: flex;
     cursor: pointer;
@@ -132,7 +128,6 @@ p {
     margin-right: 8px;
     stroke: var(--accent);
 }
-
 .tab__item_active {
     background-color: var(--accent);
     color: #fff;
@@ -140,8 +135,6 @@ p {
 .tab__item_active svg {
     stroke: var(--white);
 }
-
-.tab__content {}
 
 @media (max-width: 639px){
     .tab__items {
@@ -169,7 +162,9 @@ p {
 .wide {
     grid-column: span 2
 }
-.graph__title {
+.graph__top {
+    display: flex;
+    justify-content: space-between;
     padding: 24px 24px 16px;
 }
 
@@ -189,3 +184,47 @@ p {
 }
 
 /*---------- Graphs end ----------*/
+
+/*---------- Tooltip start ----------*/
+
+.tooltip {
+    position: relative;
+}
+.tooltip .tooltip__text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip .tooltip__text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltip__text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 767px){
+    .tooltip {
+        display: none;
+    }
+}
+
+/*---------- Tooltip end ----------*/
