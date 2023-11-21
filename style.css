@@ -112,7 +112,8 @@ p {
 .tab__items {
     display: flex;
     font-size: 14px;
-    line-height: 1.14;
+    line-height: 1.143;
+    font-weight: 500;
     padding: 8px;
     background-color: var(--white);
     border-radius: 72px;
@@ -147,6 +148,8 @@ p {
 
 
 /*---------- Graphs start ----------*/
+/*304/208*/
+/*640/298*/
 
 .graphs {
     display: grid;
@@ -157,11 +160,28 @@ p {
 .graph {
     background-color: var(--white);
     border-radius: 16px;
-    height: 208px;
 }
+
+.graph__ratio {
+    position: relative;
+    padding-bottom: calc(144 / 304 * 100%);
+}
+.graph__ratio-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .wide {
     grid-column: span 2
 }
+.wide .graph__ratio {
+    padding-bottom: calc(234 / 640 * 100%);
+}
+
 .graph__top {
     display: flex;
     justify-content: space-between;
